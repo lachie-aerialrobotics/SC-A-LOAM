@@ -371,8 +371,8 @@ void pubPath( void )
         // const gtsam::Pose3& pose_est = isamCurrentEstimate.at<gtsam::Pose3>(node_idx);
 
         nav_msgs::Odometry odomAftPGOthis;
-        odomAftPGOthis.header.frame_id = "/camera_init";
-        odomAftPGOthis.child_frame_id = "/aft_pgo";
+        odomAftPGOthis.header.frame_id = "camera_init";
+        odomAftPGOthis.child_frame_id = "aft_pgo";
         odomAftPGOthis.header.stamp = ros::Time().fromSec(keyframeTimes.at(node_idx));
         odomAftPGOthis.pose.pose.position.x = pose_est.x;
         odomAftPGOthis.pose.pose.position.y = pose_est.y;
@@ -385,7 +385,7 @@ void pubPath( void )
         poseStampAftPGO.pose = odomAftPGOthis.pose.pose;
 
         pathAftPGO.header.stamp = odomAftPGOthis.header.stamp;
-        pathAftPGO.header.frame_id = "/camera_init";
+        pathAftPGO.header.frame_id = "camera_init";
         pathAftPGO.poses.push_back(poseStampAftPGO);
     }
     mKF.unlock(); 
@@ -401,7 +401,7 @@ void pubPath( void )
     q.setY(odomAftPGO.pose.pose.orientation.y);
     q.setZ(odomAftPGO.pose.pose.orientation.z);
     transform.setRotation(q);
-    br.sendTransform(tf::StampedTransform(transform, odomAftPGO.header.stamp, "/camera_init", "/aft_pgo"));
+    br.sendTransform(tf::StampedTransform(transform, odomAftPGO.header.stamp, "camera_init", "aft_pgo"));
 } // pubPath
 
 void updatePoses(void)
