@@ -87,7 +87,7 @@ for node_idx in range(len(scan_files)):
         continue
 
     nodes_count = nodes_count + 1
-    if( nodes_count % node_skip is not 0): 
+    if( nodes_count % node_skip != 0): 
         if(node_idx is not scan_idx_range_to_stack[0]): # to ensure the vis init 
             continue
 
