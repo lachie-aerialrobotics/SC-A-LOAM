@@ -26,8 +26,7 @@ color_table_len = color_table.shape[0]
 ##########################
 # User only consider this block
 ##########################
-
-
+data_dir = "/home/xavier01/data/" # should end with / 
 scan_dir = data_dir + "Scans"
 scan_files = os.listdir(scan_dir) 
 scan_files.sort()
