@@ -27,7 +27,7 @@ color_table_len = color_table.shape[0]
 # User only consider this block
 ##########################
 
-data_dir = "../sample_data/Seosan01/" # should end with / 
+data_dir = "/home/xavier01/data/" # should end with / 
 scan_idx_range_to_stack = [0, 20] # if you want a whole map, use [0, len(scan_files)]
 node_skip = 1
 
