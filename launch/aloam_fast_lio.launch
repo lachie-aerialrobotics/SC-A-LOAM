@@ -24,7 +24,7 @@
     <!-- <remap from="/velodyne_points" to="/os1_points"/> -->
 
     <remap from="/velodyne_cloud_registered_local" to="/cloud_registered"/>
-    <remap from="/aft_mapped_to_init" to="/aft_mapped_to_init"/>
+    <remap from="/aft_mapped_to_init" to="/Odometry"/>
 
     <!-- utils -->
     <param name="save_directory" type="string" value="/home/user/Documents/catkin2021/catkin_scaloam_util/data/"/>  <!-- CHANGE THIS and end with / -->
