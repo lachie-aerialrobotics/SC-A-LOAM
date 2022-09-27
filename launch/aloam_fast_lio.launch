@@ -30,7 +30,7 @@
     <remap from="/cloud_for_scancontext" to="/cloud_registered_lidar"/>
 
     <!-- utils -->
-    <param name="save_directory" type="string" value="xavier01/home/data/"/>  <!-- CHANGE THIS and end with / -->
+    <param name="save_directory" type="string" value="/home/xavier01/data/"/>  <!-- CHANGE THIS and end with / -->
 
     <!-- nodes -->
     <!-- <node pkg="aloam_velodyne" type="ascanRegistration" name="ascanRegistration" output="screen" /> A-LOAM -->
