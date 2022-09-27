@@ -3,6 +3,7 @@ import os
 import sys
 import time 
 import copy 
+from io import BytesIO 
 from io import StringIO
 
 import pypcd # for the install, use this command: python3.x (use your python ver) -m pip install --user git+https://github.com/DanielPollithy/pypcd.git
