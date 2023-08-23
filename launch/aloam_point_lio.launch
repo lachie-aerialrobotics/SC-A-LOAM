@@ -1,0 +1,20 @@
+<launch>
+    <!-- SC-A-LOAM -->
+    <param name="keyframe_meter_gap" type="double" value="2"/> 
+
+    <!-- Scan Context -->
+    <param name="sc_dist_thres" type="double" value="0.1"/>
+    <param name="sc_max_radius" type="double" value="20.0"/>
+
+    <remap from="/velodyne_cloud_registered_local" to="/cloud_registered_body"/>
+    <remap from="/aft_mapped_to_init" to="/aft_mapped_to_init"/>
+
+    <!-- utils -->
+    <param name="save_directory" type="string" value="$(find aloam_velodyne)/PCD/"/>  <!-- CHANGE THIS and end with / -->
+
+    <node pkg="aloam_velodyne" type="alaserPGO" name="alaserPGO" output="log" /> <!-- SC-A-LOAM -->
+
+    <!-- restart mapping service -->
+    <node name="restart_mapping" pkg="aloam_velodyne" type="restart_mapping.py" required="true" output="screen"/>
+
+</launch>

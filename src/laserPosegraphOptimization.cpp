@@ -807,7 +807,7 @@ void process_isam(void)
 
 void pubMap(void)
 {
-    int SKIP_FRAMES = 2; // sparse map visulalization to save computations 
+    int SKIP_FRAMES = 1; // sparse map visulalization to save computations 
     int counter = 0;
 
     laserCloudMapPGO->clear();
@@ -833,7 +833,7 @@ void pubMap(void)
 
 void process_viz_map(void)
 {
-    float vizmapFrequency = 0.1; // 0.1 means run onces every 10s
+    float vizmapFrequency = 5.0; // modify this to change map publish frequency
     ros::Rate rate(vizmapFrequency);
     while (ros::ok()) {
         rate.sleep();
@@ -885,12 +885,12 @@ int main(int argc, char **argv)
     scManager.setSCdistThres(scDistThres);
     scManager.setMaximumRadius(scMaximumRadius);
 
-    float filter_size = 0.4; 
+    float filter_size = 0.02; // this was changed to allow denser point cloud collecting
     downSizeFilterScancontext.setLeafSize(filter_size, filter_size, filter_size);
     downSizeFilterICP.setLeafSize(filter_size, filter_size, filter_size);
 
     double mapVizFilterSize;
-	nh.param<double>("mapviz_filter_size", mapVizFilterSize, 0.05); // pose assignment every k frames 
+	nh.param<double>("mapviz_filter_size", mapVizFilterSize, 0.02); // pose assignment every k frames 
     downSizeFilterMapPGO.setLeafSize(mapVizFilterSize, mapVizFilterSize, mapVizFilterSize);
 
 	ros::Subscriber subLaserCloudFullRes = nh.subscribe<sensor_msgs::PointCloud2>("/velodyne_cloud_registered_local", 100, laserCloudFullResHandler);
