@@ -22,7 +22,7 @@ def handle_restart_mapping(req):
     pid = os.fork()
     if pid == 0:
         # Continue to other code ...
-        os.system("roslaunch aloam_velodyne /alaserPGO")
+        os.system("roslaunch aloam_velodyne aloam_point_lio.launch")
     return resp
     
 
