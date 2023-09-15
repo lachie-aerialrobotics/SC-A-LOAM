@@ -18,7 +18,6 @@
     <!-- <node pkg="aloam_velodyne" type="alaserMapping" name="alaserMapping" output="screen" /> -->
     <node pkg="aloam_velodyne" type="alaserPGO" name="alaserPGO" output="log" /> <!-- SC-A-LOAM -->
 
-    <!-- restart mapping service -->
-    <!-- <node name="pgo_services" pkg="aloam_velodyne" type="pgo_services.py" required="true" output="screen"/> -->
+    <node name="pgo_services" pkg="aloam_velodyne" type="pgo_services.py" required="true" output="screen"/>
 
 </launch>
