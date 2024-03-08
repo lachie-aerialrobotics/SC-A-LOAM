@@ -7,7 +7,7 @@
     <param name="sc_dist_thres" type="double" value="0.1"/>
     <param name="sc_max_radius" type="double" value="20.0"/>
 
-    <param name="mapviz_filter_size" type="double" value="0.05"/>
+    <param name="mapviz_filter_size" type="double" value="0.2"/>
 
     <remap from="/velodyne_cloud_registered_local" to="/cloud_registered_body"/>
     <remap from="/aft_mapped_to_init" to="/aft_mapped_to_init"/>
