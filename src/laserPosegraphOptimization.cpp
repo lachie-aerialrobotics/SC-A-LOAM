@@ -885,7 +885,9 @@ int main(int argc, char **argv)
     scManager.setSCdistThres(scDistThres);
     scManager.setMaximumRadius(scMaximumRadius);
 
-    float filter_size = 0.005; // this was changed to allow denser point cloud collecting
+    // float filter_size = 0.005; // this was changed to allow denser point cloud collecting
+    double filter_size;
+    nh.param<double>("filter_size", filter_size, 0.01);
     downSizeFilterScancontext.setLeafSize(filter_size, filter_size, filter_size);
     downSizeFilterICP.setLeafSize(filter_size, filter_size, filter_size);
 
