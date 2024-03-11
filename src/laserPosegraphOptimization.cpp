@@ -401,7 +401,7 @@ void pubPath( void )
     q.setY(odomAftPGO.pose.pose.orientation.y);
     q.setZ(odomAftPGO.pose.pose.orientation.z);
     transform.setRotation(q);
-    br.sendTransform(tf::StampedTransform(transform, odomAftPGO.header.stamp, "camera_init", "aft_pgo"));
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "camera_init", "aft_pgo"));
 } // pubPath
 
 void updatePoses(void)
